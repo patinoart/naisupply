@@ -2,151 +2,757 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materiales Textiles Industriales</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAI Supply — Materiales de Aislamiento Industrial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        header {
-            background-color: #1f2937;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1e293b;
+      --muted: #64748b;
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --accent-light: #eff6ff;
+      --dark: #0f172a;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.06);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,.12);
+      --max-w: 1100px;
+    }
 
-        nav {
-            background-color: #374151;
-            padding: 10px;
-            text-align: center;
-        }
+    html { scroll-behavior: smooth; }
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
 
-        section {
-            padding: 40px 20px;
-        }
+    /* ─── Header ─────────────────────────────────────────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 8px rgba(0,0,0,.06);
+    }
 
-        h2 {
-            color: #1f2937;
-        }
+    .header-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .producto {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
 
-        footer {
-            background-color: #1f2937;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
+    .logo span { color: var(--accent); }
 
-        .boton {
-            background-color: #2563eb;
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-    </style>
+    nav { display: flex; gap: 8px; align-items: center; }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: color .15s, background .15s;
+    }
+
+    nav a:hover { color: var(--text); background: var(--bg); }
+
+    nav .nav-cta {
+      background: var(--accent);
+      color: white;
+      padding: 8px 18px;
+    }
+
+    nav .nav-cta:hover { background: var(--accent-dark); color: white; }
+
+    /* ─── Hero ────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e293b 100%);
+      color: white;
+      padding: 96px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-content { position: relative; max-width: 720px; margin: 0 auto; }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(37,99,235,.3);
+      border: 1px solid rgba(37,99,235,.5);
+      color: #93c5fd;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: #94a3b8;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+
+    .hero-tag {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      color: #cbd5e1;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      padding: 5px 14px;
+      border-radius: 100px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 8px;
+      transition: background .15s, transform .1s, box-shadow .15s;
+      box-shadow: 0 4px 14px rgba(37,99,235,.35);
+    }
+
+    .btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(37,99,235,.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,.25);
+      box-shadow: none;
+      margin-left: 12px;
+    }
+
+    .btn-outline:hover { background: rgba(255,255,255,.08); box-shadow: none; }
+
+    /* ─── Category sections ───────────────────────────────── */
+    .category {
+      padding: 72px 24px;
+    }
+
+    .category:nth-child(even) { background: var(--surface); }
+
+    .category-inner { max-width: var(--max-w); margin: 0 auto; }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 52px;
+    }
+
+    .category-header-line {
+      width: 4px;
+      height: 40px;
+      background: var(--accent);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .category-header h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .category-header p {
+      font-size: 0.9375rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ─── Product rows ────────────────────────────────────── */
+    .product {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-bottom: 48px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: box-shadow .2s;
+    }
+
+    .product:hover { box-shadow: var(--shadow-lg); }
+
+    .product.reverse { direction: rtl; }
+    .product.reverse > * { direction: ltr; }
+
+    .product-image {
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-image.placeholder {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .product-image.placeholder svg { opacity: .3; }
+    .product-image.placeholder span { font-size: 0.8125rem; color: var(--muted); }
+
+    .product-body {
+      padding: 36px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .product-tag {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+      align-self: flex-start;
+    }
+
+    .product-body h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .product-body > p {
+      font-size: 0.9375rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+      line-height: 1.65;
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      margin-bottom: 24px;
+    }
+
+    .spec-table tr { border-bottom: 1px solid var(--border); }
+    .spec-table tr:last-child { border-bottom: none; }
+
+    .spec-table td {
+      padding: 7px 0;
+      vertical-align: top;
+    }
+
+    .spec-table td:first-child {
+      color: var(--muted);
+      font-weight: 500;
+      width: 46%;
+      padding-right: 12px;
+    }
+
+    .spec-table td:last-child {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: auto;
+      padding-top: 4px;
+    }
+
+    .product-link:hover { color: var(--accent-dark); }
+
+    .product-link svg { transition: transform .15s; }
+    .product-link:hover svg { transform: translateX(3px); }
+
+    /* ─── Two-variant product (Style 84 / 188) ───────────── */
+    .spec-variants {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .spec-variant {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .spec-variant h4 {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .spec-variant ul {
+      list-style: none;
+      font-size: 0.8125rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .spec-variant ul li strong { color: var(--text); }
+
+    /* ─── Contact section ─────────────────────────────────── */
+    .contact {
+      background: var(--dark);
+      color: white;
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .contact-inner { max-width: 600px; margin: 0 auto; }
+
+    .contact h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    .contact p {
+      color: #94a3b8;
+      font-size: 1.0625rem;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    /* ─── Footer ─────────────────────────────────────────── */
+    footer {
+      background: #0f172a;
+      border-top: 1px solid #1e293b;
+      padding: 24px;
+      text-align: center;
+    }
+
+    footer p {
+      color: #475569;
+      font-size: 0.875rem;
+    }
+
+    /* ─── Responsive ──────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .product { grid-template-columns: 1fr; }
+      .product.reverse { direction: ltr; }
+      .product-image { min-height: 220px; }
+      .product-body { padding: 24px; }
+      .spec-variants { grid-template-columns: 1fr; }
+      nav a:not(.nav-cta) { display: none; }
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <h1>Materiales Textiles Industriales</h1>
-        <p>Mantas Cerámicas • Telas de Alta Temperatura • Accesorios en Acero Inoxidable</p>
-    </header>
-    <nav> <a href="#textiles">Textiles</a> <a href="#accesorios">Accesorios</a> <a href="#mantas">Mantas Cerámicas</a>
-        <a href="#contacto">Contacto</a></nav>
-    <section id="textiles">
-        <h2>Textiles de Alta Temperatura</h2>
-        <div class="producto">
-            <h3>Tela de Fibra de Vidrio Siliconada (17 oz)</h3>
-            <p>Color gris, siliconada por ambos lados.</p>
-            <p>Temperatura textil: 550 °C</p>
-            <p>Temperatura silicona: 260 °C</p>
-            <p>Rollo: 1.52 m x 50 m</p>
-        </div>
-        <div class="producto">
-            <h3>Tejido de Sílice Alta Temperatura 18 oz</h3>
-            <p>Temperatura máxima: 1000 °C</p>
-            <p>Color crema</p>
-            <p>Rollo: 1.0 m x 50 m</p>
-        </div>
-        <div class="producto">
-            <h3>Tejido de Sílice Alta Temperatura 36 oz</h3>
-            <p>Temperatura máxima: 1000 °C</p>
-            <p>Color crema</p>
-            <p>Rollo: 1.0 m x 50 m</p>
-        </div>
-        <div class="producto">
-            <h3>Hilo Kevlar con Refuerzo de Acero Inoxidable</h3>
-            <p>Peso: 350 g</p>
-            <p>Color amarillo</p>
-            <p>Temperatura: 180 - 200 °C</p>
-        </div>
-    </section>
-    <section id="accesorios">
-        <h2>Accesorios en Acero Inoxidable 304</h2>
-        <div class="producto">
-            <h3>Alfileres de Acolchado</h3>
-            <p>2-1/2" x 12 ga</p>
-            <p>4-1/2" x 12 ga</p>
-            <p>Incluye arandela autobloqueante 7/8"</p>
-        </div>
-        <div class="producto">
-            <h3>Alfileres de Amarre</h3>
-            <p>2-1/2" x 12 ga</p>
-            <p>4-1/2" x 12 ga</p>
-            <p>Incluye arandela autobloqueante 7/8"</p>
-        </div>
-        <div class="producto">
-            <h3>Resortes con Anillo</h3>
-            <p>2 pulgadas</p>
-            <p>4 pulgadas</p>
-        </div>
-        <div class="producto">
-            <h3>Anillos de Cerdo Estilo C</h3>
-            <p>1/2" x 16 ga (11,000 por caja)</p>
-            <p>3/4" x 16 ga (10,000 por caja)</p>
-        </div>
-        <div class="producto">
-            <h3>Malla de Alambre Acero Inoxidable 304</h3>
-            <p>Rollo: 1.0 m</p>
-            <p>Peso: 50 libras</p>
-        </div>
-    </section>
-    <section id="mantas">
-        <h2>Manta de Fibra Cerámica</h2>
-        <div class="producto">
-            <h3>Manta 1000 °C</h3>
-            <p>Densidad: 96 - 128 kg/m³</p>
-            <p>Dimensiones: 7200 x 610 x 25 mm</p>
-            <p>Temperatura máxima: 1000 °C</p>
-        </div>
-    </section>
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Solicite cotización o información técnica.</p> <a href="mailto:ventas@suempresa.com" class="boton">Solicitar
-            Cotización</a>
-    </section>
-    <footer>
-        <p>© 2026 Materiales Textiles Industriales - Todos los derechos reservados</p>
-    </footer>
-</body>
 
+  <!-- ─── Header ─────────────────────────────────────────── -->
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="#">NAI <span>Supply</span></a>
+      <nav>
+        <a href="#textiles">Textiles</a>
+        <a href="#accesorios">Accesorios</a>
+        <a href="#mantas">Mantas</a>
+        <a href="#contacto" class="nav-cta">Cotizar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ─── Hero ──────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Materiales Industriales de Alta Temperatura</div>
+      <h1>Soluciones de Aislamiento<br>para la Industria</h1>
+      <p>Proveemos textiles técnicos, accesorios en acero inoxidable y mantas cerámicas para aplicaciones de alta temperatura en la industria del aislamiento.</p>
+      <div class="hero-tags">
+        <span class="hero-tag">Telas de Fibra de Vidrio</span>
+        <span class="hero-tag">Tejido de Sílice</span>
+        <span class="hero-tag">Acero Inoxidable 304</span>
+        <span class="hero-tag">Mantas Cerámicas</span>
+        <span class="hero-tag">Resortes de Expansión</span>
+      </div>
+      <a href="#contacto" class="btn">Solicitar Cotización</a>
+      <a href="#textiles" class="btn btn-outline">Ver Productos</a>
+    </div>
+  </section>
+
+  <!-- ─── Textiles ─────────────────────────────────────── -->
+  <section class="category" id="textiles">
+    <div class="category-inner">
+      <div class="category-header">
+        <div class="category-header-line"></div>
+        <div>
+          <h2>Textiles de Alta Temperatura</h2>
+          <p>Tejidos técnicos para protección térmica, soldadura y aislamiento industrial</p>
+        </div>
+      </div>
+
+      <!-- Product 1: Silicone Fiberglass -->
+      <div class="product">
+        <div class="product-image">
+          <img src="assets/images/silicone-fiberglass.jpg" alt="Paño de Silicona / Fibra de Vidrio" loading="lazy">
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Style 725</span>
+          <h3>Paño de Silicona / Fibra de Vidrio</h3>
+          <p>Tejido de fibra de vidrio impregnado con caucho de silicona especialmente formulado. Ofrece mayor resistencia al aceite y al agua, baja emisión de humo y retardancia de llama.</p>
+          <table class="spec-table">
+            <tr><td>Peso</td><td>17.0 oz/yd² ±10%</td></tr>
+            <tr><td>Espesor</td><td>0.015" ±10%</td></tr>
+            <tr><td>Color</td><td>Silicona gris, ambos lados</td></tr>
+            <tr><td>Temp. máx. textil</td><td>537 °C (1000 °F) continuo</td></tr>
+            <tr><td>Temp. máx. silicona</td><td>260 °C (500 °F) continuo</td></tr>
+            <tr><td>Resist. tracción (urdimbre)</td><td>175 lbs/pulg. mín.</td></tr>
+            <tr><td>Resist. desgarro (urdimbre)</td><td>35 lbs mín.</td></tr>
+            <tr><td>Resist. estallido (Mullen)</td><td>175 lbs/pulg. mín.</td></tr>
+            <tr><td>Resist. hidrostática</td><td>200 lbs/pulg. mín.</td></tr>
+            <tr><td>Norma militar</td><td>MIL-I-20079G / MIL-I-22424</td></tr>
+          </table>
+          <a href="#contacto" class="product-link">
+            Solicitar cotización
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 2: Silica Fabric -->
+      <div class="product reverse">
+        <div class="product-image">
+          <img src="assets/images/silica-fabric.jpg" alt="Tela de Sílice de Alta Temperatura" loading="lazy">
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Style 84 &amp; 188</span>
+          <h3>Tela de Sílice de Alta Temperatura</h3>
+          <p>Tejido flexible de sílice puro (mín. 96%) desarrollado para reemplazar el asbesto en aplicaciones de soldadura y alivio de tensión. Disponible en dos pesos según el nivel de protección requerido.</p>
+          <div class="spec-variants">
+            <div class="spec-variant">
+              <h4>Style 84 — 18 oz</h4>
+              <ul>
+                <li><strong>Peso:</strong> 18 oz/yd²</li>
+                <li><strong>Ancho:</strong> 36" y 60"</li>
+                <li><strong>Grosor:</strong> 0.030"</li>
+                <li><strong>Uso:</strong> Protección contra chispas y quema ligera</li>
+              </ul>
+            </div>
+            <div class="spec-variant">
+              <h4>Style 188 — 36 oz</h4>
+              <ul>
+                <li><strong>Peso:</strong> 36 oz/yd²</li>
+                <li><strong>Ancho:</strong> 36"</li>
+                <li><strong>Grosor:</strong> 0.054"</li>
+                <li><strong>Uso:</strong> Quemaduras intensas y alivio de tensión</li>
+              </ul>
+            </div>
+          </div>
+          <table class="spec-table">
+            <tr><td>Color</td><td>Natural (crema)</td></tr>
+            <tr><td>Tejido</td><td>Satinado 8 arnés</td></tr>
+            <tr><td>Temp. continua</td><td>1800 °F (982 °C)</td></tr>
+            <tr><td>Temp. intermitente</td><td>2300 °F (1260 °C)</td></tr>
+            <tr><td>Temp. de fusión</td><td>3000 °F (1649 °C)</td></tr>
+            <tr><td>Norma militar</td><td>MIL-Y-1140 / MIL-I-24244</td></tr>
+          </table>
+          <a href="#contacto" class="product-link">
+            Solicitar cotización
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Accesorios ────────────────────────────────────── -->
+  <section class="category" id="accesorios">
+    <div class="category-inner">
+      <div class="category-header">
+        <div class="category-header-line"></div>
+        <div>
+          <h2>Accesorios en Acero Inoxidable 304</h2>
+          <p>Anclajes, alfileres, mallas y resortes para la fabricación e instalación de mantas aislantes removibles</p>
+        </div>
+      </div>
+
+      <!-- Product 3: Insulation Anchors -->
+      <div class="product">
+        <div class="product-image">
+          <img src="assets/images/insulation-anchors.jpg" alt="Anclajes de Aislamiento" loading="lazy">
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Anclajes</span>
+          <h3>Anclajes de Aislamiento</h3>
+          <p>Se utilizan comúnmente en la fabricación de mantas removibles o reutilizables para fijar el aislamiento a una superficie. Disponibles en múltiples acabados.</p>
+          <table class="spec-table">
+            <tr><td>Material</td><td>Acero chapado, galvanizado o inoxidable</td></tr>
+            <tr><td>Aplicación principal</td><td>Mantas removibles, tuberías y recipientes a presión</td></tr>
+          </table>
+          <a href="#contacto" class="product-link">
+            Solicitar cotización
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 4: Quilting Pins -->
+      <div class="product reverse">
+        <div class="product-image">
+          <img src="assets/images/quilting-pins.jpg" alt="Alfileres de Acolchado" loading="lazy">
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Alfileres</span>
+          <h3>Alfileres de Acolchado</h3>
+          <p>Pasadores con cabeza ahuecada para instalación permanente de revestimiento de conductos u otros materiales de aislamiento en carcasas de chapa metálica de HVAC.</p>
+          <table class="spec-table">
+            <tr><td>Tamaños</td><td>2-1/2" × 12 ga &nbsp;|&nbsp; 4-1/2" × 12 ga</td></tr>
+            <tr><td>Arandela incluida</td><td>Autoblocante 7/8"</td></tr>
+            <tr><td>Material</td><td>Acero inoxidable 304</td></tr>
+          </table>
+          <a href="#contacto" class="product-link">
+            Solicitar cotización
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 5: Self-locking washers -->
+      <div class="product">
+        <div class="product-image">
+          <img src="assets/images/self-locking-washers.jpg" alt="Arandelas Autoblocantes" loading="lazy">
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Arandelas</span>
+          <h3>Arandelas Autoblocantes</h3>
+          <p>Se utilizan junto con pasadores de soldadura, anclajes de aislamiento y anclajes de cordones para fijar el aislamiento en su lugar de forma segura y permanente.</p>
+          <table class="spec-table">
+            <tr><td>Tipos</td><td>Redondas y planas</td></tr>
+            <tr><td>Material</td><td>Acero inoxidable 304</td></tr>
+            <tr><td>Compatibilidad</td><td>Pasadores de soldadura, anclajes de aislamiento, anclajes de cordones</td></tr>
+          </table>
+          <a href="#contacto" class="product-link">
+            Solicitar cotización
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 6: Hog Rings -->
+      <div class="product reverse">
+        <div class="product-image">
+          <img src="assets/images/hog-rings.jpg" alt="Anillos de Cerdo Estilo C" loading="lazy">
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Anillos de Cerdo</span>
+          <h3>Anillos de Cerdo — Estilo C</h3>
+          <p>En combinación con herramientas neumáticas de anillado, ofrecen sistemas de fijación fiables y económicos para mantas aislantes, tapicería y estructuras de jaulas o cercas.</p>
+          <table class="spec-table">
+            <tr><td>Tamaños disponibles</td><td>1/2" × 16 ga &nbsp;|&nbsp; 3/4" × 16 ga</td></tr>
+            <tr><td>Cantidad por caja</td><td>1/2": 11,000 uds &nbsp;|&nbsp; 3/4": 10,000 uds</td></tr>
+            <tr><td>Material</td><td>Acero inoxidable</td></tr>
+            <tr><td>Aplicaciones</td><td>Mantas de presión, tapicería, jaulas y cercas</td></tr>
+          </table>
+          <a href="#contacto" class="product-link">
+            Solicitar cotización
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 7: Wire Mesh -->
+      <div class="product">
+        <div class="product-image">
+          <img src="assets/images/wire-mesh.jpg" alt="Malla de Alambre Tejida" loading="lazy">
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Malla</span>
+          <h3>Malla de Alambre Tejida</h3>
+          <p>Malla metálica tejida en forma tubular, aplanada en tramos continuos y enrollada. Tejido estándar de 8 puntadas por pulgada de ancho y 6–8 pasadas por pulgada de largo.</p>
+          <table class="spec-table">
+            <tr><td>Aleación</td><td>Acero inoxidable 304</td></tr>
+            <tr><td>Temp. de servicio</td><td>Hasta 2000 °F</td></tr>
+            <tr><td>Temp. continua</td><td>900 °F (482 °C)</td></tr>
+            <tr><td>Presentación</td><td>Rollo de 1.0 m, 50 lbs</td></tr>
+            <tr><td>Beneficios</td><td>Resistente a la corrosión, extremadamente durable</td></tr>
+          </table>
+          <a href="#contacto" class="product-link">
+            Solicitar cotización
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Product 8: Expansion Springs -->
+      <div class="product reverse">
+        <div class="product-image">
+          <img src="assets/images/expansion-springs.jpg" alt="Resortes de Expansión" loading="lazy">
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Resortes</span>
+          <h3>Resortes de Expansión</h3>
+          <p>Accesorios de acero inoxidable para asegurar el aislamiento en tuberías, tanques y recipientes sujetos a expansión y contracción térmica. Disponibles en dos configuraciones.</p>
+          <div class="spec-variants">
+            <div class="spec-variant">
+              <h4>Cilíndrico 4"</h4>
+              <ul>
+                <li><strong>Material:</strong> SS tipo 304</li>
+                <li><strong>Uso:</strong> Diámetros pequeños</li>
+                <li><strong>Fleje:</strong> Hasta 3/4" de ancho</li>
+              </ul>
+            </div>
+            <div class="spec-variant">
+              <h4>MITY-Spring</h4>
+              <ul>
+                <li><strong>Material:</strong> SS tipo 302/304</li>
+                <li><strong>Compresión:</strong> 80 lb/pulg.</li>
+                <li><strong>Uso:</strong> Grandes diámetros</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#contacto" class="product-link">
+            Solicitar cotización
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Mantas ─────────────────────────────────────────── -->
+  <section class="category" id="mantas">
+    <div class="category-inner">
+      <div class="category-header">
+        <div class="category-header-line"></div>
+        <div>
+          <h2>Manta de Fibra Cerámica</h2>
+          <p>Aislamiento de alta temperatura para hornos, calderas y sistemas de tuberías industriales</p>
+        </div>
+      </div>
+
+      <!-- Product 9: Ceramic Blanket -->
+      <div class="product" style="max-width: 680px;">
+        <div class="product-image placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+          <span>Imagen próximamente</span>
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Cerámica</span>
+          <h3>Manta de Fibra Cerámica 1000 °C</h3>
+          <p>Manta de alta temperatura para aislamiento en hornos, calderas y sistemas de tuberías industriales.</p>
+          <table class="spec-table">
+            <tr><td>Temperatura máxima</td><td>1000 °C</td></tr>
+            <tr><td>Densidad</td><td>96 – 128 kg/m³</td></tr>
+            <tr><td>Dimensiones</td><td>7200 × 610 × 25 mm</td></tr>
+          </table>
+          <a href="#contacto" class="product-link">
+            Solicitar cotización
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Contact ────────────────────────────────────────── -->
+  <section class="contact" id="contacto">
+    <div class="contact-inner">
+      <h2>¿Necesita una cotización?</h2>
+      <p>Contáctenos para obtener precios, fichas técnicas o asesoría sobre el producto adecuado para su aplicación.</p>
+      <a href="mailto:ventas@suempresa.com" class="btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Enviar correo
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── Footer ────────────────────────────────────────── -->
+  <footer>
+    <p>© 2026 NAI Supply — Materiales de Aislamiento Industrial</p>
+  </footer>
+
+</body>
 </html>
